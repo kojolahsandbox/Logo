@@ -1,6 +1,6 @@
 /* ============================================
    AdminLTE 3 Custom CSS - Nagori Shop Theme
-   Konsisten dengan halaman checkout
+   Compatible dengan DataTables CDN
    ============================================ */
 
 /* CSS Variables untuk konsistensi warna */
@@ -414,17 +414,309 @@ body {
 }
 
 /* ============================================
-   TABLES
+   DATATABLES STYLING (ENHANCED)
    ============================================ */
 
-/* DataTables Styling */
-.table {
+/* DataTables Container */
+.dataTables_wrapper {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+/* DataTables Table Styling */
+table.dataTable {
+  width: 100% !important;
+  margin: 0 !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  background: white !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  box-shadow: var(--nagori-shadow) !important;
+}
+
+/* DataTables Header */
+table.dataTable thead th {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+  color: var(--nagori-text-dark) !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  padding: 15px 12px !important;
+  border-bottom: 2px solid var(--nagori-primary) !important;
+  border-left: none !important;
+  border-right: none !important;
+  text-align: left !important;
+  vertical-align: middle !important;
+  position: relative !important;
+}
+
+table.dataTable thead th:first-child {
+  border-top-left-radius: 12px !important;
+}
+
+table.dataTable thead th:last-child {
+  border-top-right-radius: 12px !important;
+}
+
+/* DataTables Header Hover Effect */
+table.dataTable thead th:hover {
+  background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%) !important;
+}
+
+/* DataTables Sorting Icons */
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_desc:after {
+  color: var(--nagori-primary) !important;
+  font-size: 12px !important;
+}
+
+/* DataTables Body */
+table.dataTable tbody tr {
+  background: white !important;
+  transition: var(--nagori-transition) !important;
+}
+
+table.dataTable tbody tr:nth-child(even) {
+  background: #fafafa !important;
+}
+
+table.dataTable tbody tr:hover {
+  background: linear-gradient(135deg, rgba(255, 75, 43, 0.05) 0%, rgba(255, 65, 108, 0.05) 100%) !important;
+  transform: scale(1.01) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+table.dataTable tbody td {
+  padding: 12px !important;
+  border-top: 1px solid #f0f0f0 !important;
+  border-left: none !important;
+  border-right: none !important;
+  vertical-align: middle !important;
+  font-size: 14px !important;
+  color: var(--nagori-text-dark) !important;
+}
+
+/* DataTables Controls Container */
+.dataTables_wrapper .dataTables_top {
+  padding: 20px 0 !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 15px !important;
+}
+
+.dataTables_wrapper .dataTables_bottom {
+  padding: 20px 0 !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 15px !important;
+  border-top: 1px solid #eee !important;
+  margin-top: 20px !important;
+}
+
+/* DataTables Length (Show entries) */
+.dataTables_wrapper .dataTables_length {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.dataTables_wrapper .dataTables_length label {
+  font-weight: 500 !important;
+  color: var(--nagori-text-dark) !important;
+  margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.dataTables_wrapper .dataTables_length select {
+  border: 2px solid #e9ecef !important;
+  border-radius: var(--nagori-border-radius) !important;
+  padding: 8px 12px !important;
+  font-size: 14px !important;
+  color: var(--nagori-text-dark) !important;
+  background: white !important;
+  transition: var(--nagori-transition) !important;
+  min-width: 70px !important;
+}
+
+.dataTables_wrapper .dataTables_length select:focus {
+  border-color: var(--nagori-primary) !important;
+  box-shadow: 0 0 0 0.2rem rgba(255, 75, 43, 0.25) !important;
+  outline: none !important;
+}
+
+/* DataTables Filter (Search) */
+.dataTables_wrapper .dataTables_filter {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.dataTables_wrapper .dataTables_filter label {
+  font-weight: 500 !important;
+  color: var(--nagori-text-dark) !important;
+  margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+  border: 2px solid #e9ecef !important;
+  border-radius: var(--nagori-border-radius) !important;
+  padding: 8px 15px !important;
+  font-size: 14px !important;
+  color: var(--nagori-text-dark) !important;
+  background: white !important;
+  transition: var(--nagori-transition) !important;
+  min-width: 200px !important;
+}
+
+.dataTables_wrapper .dataTables_filter input:focus {
+  border-color: var(--nagori-primary) !important;
+  box-shadow: 0 0 0 0.2rem rgba(255, 75, 43, 0.25) !important;
+  outline: none !important;
+}
+
+.dataTables_wrapper .dataTables_filter input::-webkit-input-placeholder {
+  color: var(--nagori-text-muted) !important;
+}
+
+/* DataTables Info */
+.dataTables_wrapper .dataTables_info {
+  color: var(--nagori-text-muted) !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+}
+
+/* DataTables Pagination */
+.dataTables_wrapper .dataTables_paginate {
+  display: flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+  display: inline-block !important;
+  padding: 8px 12px !important;
+  margin: 0 2px !important;
+  text-decoration: none !important;
+  border: 2px solid #e9ecef !important;
+  border-radius: var(--nagori-border-radius) !important;
+  color: var(--nagori-text-dark) !important;
+  background: white !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  transition: var(--nagori-transition) !important;
+  cursor: pointer !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  background: var(--nagori-primary) !important;
+  border-color: var(--nagori-primary) !important;
+  color: white !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 8px rgba(255, 75, 43, 0.3) !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+  background: var(--nagori-gradient) !important;
+  border-color: var(--nagori-primary) !important;
+  color: white !important;
+  box-shadow: 0 2px 8px rgba(255, 75, 43, 0.3) !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+  background: var(--nagori-gradient-hover) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(255, 75, 43, 0.4) !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
+  color: #ccc !important;
+  cursor: not-allowed !important;
+  border-color: #f0f0f0 !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover {
+  background: white !important;
+  border-color: #f0f0f0 !important;
+  color: #ccc !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* DataTables Processing */
+.dataTables_wrapper .dataTables_processing {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 200px !important;
+  margin-left: -100px !important;
+  margin-top: -26px !important;
+  text-align: center !important;
+  padding: 15px 20px !important;
+  background: white !important;
+  border: 2px solid var(--nagori-primary) !important;
+  border-radius: var(--nagori-border-radius) !important;
+  box-shadow: var(--nagori-shadow) !important;
+  color: var(--nagori-primary) !important;
+  font-weight: 600 !important;
+  z-index: 1000 !important;
+}
+
+/* DataTables Empty Table */
+.dataTables_wrapper .dataTables_empty {
+  text-align: center !important;
+  padding: 40px 20px !important;
+  color: var(--nagori-text-muted) !important;
+  font-size: 16px !important;
+  font-style: italic !important;
+}
+
+/* DataTables Responsive */
+@media screen and (max-width: 767px) {
+  .dataTables_wrapper .dataTables_top,
+  .dataTables_wrapper .dataTables_bottom {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  
+  .dataTables_wrapper .dataTables_length,
+  .dataTables_wrapper .dataTables_filter {
+    justify-content: center !important;
+  }
+  
+  .dataTables_wrapper .dataTables_filter input {
+    min-width: 100% !important;
+  }
+  
+  .dataTables_wrapper .dataTables_paginate {
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+  }
+}
+
+/* ============================================
+   TABLES (GENERAL)
+   ============================================ */
+
+/* General Table Styling (non-DataTables) */
+.table:not(.dataTable) {
   border-radius: var(--nagori-border-radius) !important;
   overflow: hidden !important;
   box-shadow: var(--nagori-shadow) !important;
 }
 
-.table thead th {
+.table:not(.dataTable) thead th {
   background: #f8f9fa !important;
   border-bottom: 2px solid #dee2e6 !important;
   color: var(--nagori-text-dark) !important;
@@ -432,38 +724,17 @@ body {
   padding: 15px 10px !important;
 }
 
-.table tbody tr {
+.table:not(.dataTable) tbody tr {
   transition: var(--nagori-transition) !important;
 }
 
-.table tbody tr:hover {
+.table:not(.dataTable) tbody tr:hover {
   background-color: #f8f9fa !important;
 }
 
-.table tbody td {
+.table:not(.dataTable) tbody td {
   padding: 12px 10px !important;
   vertical-align: middle !important;
-}
-
-/* DataTables Wrapper */
-.dataTables_wrapper .dataTables_length select,
-.dataTables_wrapper .dataTables_filter input {
-  border-radius: var(--nagori-border-radius) !important;
-  border: 1px solid #ddd !important;
-  padding: 5px 10px !important;
-}
-
-.dataTables_wrapper .dataTables_paginate .paginate_button.current {
-  background: var(--nagori-gradient) !important;
-  border-color: var(--nagori-primary) !important;
-  color: white !important;
-  border-radius: var(--nagori-border-radius) !important;
-}
-
-.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
-  background: var(--nagori-primary) !important;
-  border-color: var(--nagori-primary) !important;
-  color: white !important;
 }
 
 /* ============================================
@@ -744,6 +1015,191 @@ body {
 }
 
 /* ============================================
+   DATATABLES BUTTONS EXTENSION
+   ============================================ */
+
+/* DataTables Buttons Container */
+.dt-buttons {
+  margin-bottom: 15px !important;
+  display: flex !important;
+  gap: 8px !important;
+  flex-wrap: wrap !important;
+}
+
+.dt-button {
+  background: var(--nagori-gradient) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: var(--nagori-border-radius) !important;
+  padding: 8px 16px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  transition: var(--nagori-transition) !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.dt-button:hover {
+  background: var(--nagori-gradient-hover) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(255, 75, 43, 0.3) !important;
+}
+
+.dt-button:active {
+  transform: translateY(0) !important;
+}
+
+/* Specific Button Types */
+.dt-button.buttons-excel {
+  background: linear-gradient(135deg, #28a745, #1e7e34) !important;
+}
+
+.dt-button.buttons-pdf {
+  background: linear-gradient(135deg, #dc3545, #c82333) !important;
+}
+
+.dt-button.buttons-print {
+  background: linear-gradient(135deg, #6c757d, #5a6268) !important;
+}
+
+.dt-button.buttons-copy {
+  background: linear-gradient(135deg, #17a2b8, #138496) !important;
+}
+
+.dt-button.buttons-csv {
+  background: linear-gradient(135deg, #ffc107, #e0a800) !important;
+  color: #333 !important;
+}
+
+/* ============================================
+   DATATABLES RESPONSIVE EXTENSION
+   ============================================ */
+
+/* Responsive Control Column */
+table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control,
+table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control {
+  position: relative !important;
+  padding-left: 30px !important;
+  cursor: pointer !important;
+}
+
+table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before,
+table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
+  top: 50% !important;
+  left: 8px !important;
+  height: 16px !important;
+  width: 16px !important;
+  margin-top: -8px !important;
+  display: block !important;
+  position: absolute !important;
+  color: white !important;
+  border: 2px solid var(--nagori-primary) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2) !important;
+  box-sizing: content-box !important;
+  text-align: center !important;
+  text-indent: 0 !important;
+  font-family: 'Courier New', Courier, monospace !important;
+  line-height: 14px !important;
+  content: '+' !important;
+  background-color: var(--nagori-primary) !important;
+  font-size: 12px !important;
+  font-weight: bold !important;
+}
+
+table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td.dtr-control:before,
+table.dataTable.dtr-inline.collapsed > tbody > tr.parent > th.dtr-control:before {
+  content: '-' !important;
+  background-color: var(--nagori-primary-dark) !important;
+}
+
+/* Responsive Child Rows */
+table.dataTable.dtr-inline.collapsed > tbody > tr.child {
+  background: linear-gradient(135deg, rgba(255, 75, 43, 0.02) 0%, rgba(255, 65, 108, 0.02) 100%) !important;
+}
+
+table.dataTable.dtr-inline.collapsed > tbody > tr.child td {
+  border-top: 1px solid rgba(255, 75, 43, 0.1) !important;
+  border-bottom: 1px solid rgba(255, 75, 43, 0.1) !important;
+}
+
+table.dataTable.dtr-inline.collapsed > tbody > tr.child ul.dtr-details {
+  display: block !important;
+  list-style-type: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+table.dataTable.dtr-inline.collapsed > tbody > tr.child ul.dtr-details > li {
+  border-bottom: 1px solid #efefef !important;
+  padding: 8px 0 !important;
+}
+
+table.dataTable.dtr-inline.collapsed > tbody > tr.child ul.dtr-details > li:first-child {
+  padding-top: 0 !important;
+}
+
+table.dataTable.dtr-inline.collapsed > tbody > tr.child ul.dtr-details > li:last-child {
+  border-bottom: none !important;
+}
+
+table.dataTable.dtr-inline.collapsed > tbody > tr.child span.dtr-title {
+  display: inline-block !important;
+  min-width: 120px !important;
+  font-weight: 600 !important;
+  color: var(--nagori-primary) !important;
+}
+
+/* ============================================
+   DATATABLES SELECT EXTENSION
+   ============================================ */
+
+/* Selected Rows */
+table.dataTable tbody > tr.selected,
+table.dataTable tbody > tr > .selected {
+  background-color: rgba(255, 75, 43, 0.1) !important;
+  color: var(--nagori-text-dark) !important;
+}
+
+table.dataTable.stripe tbody > tr.odd.selected,
+table.dataTable.stripe tbody > tr.odd > .selected,
+table.dataTable.display tbody > tr.odd.selected,
+table.dataTable.display tbody > tr.odd > .selected {
+  background-color: rgba(255, 75, 43, 0.12) !important;
+}
+
+table.dataTable.hover tbody > tr.selected:hover,
+table.dataTable.hover tbody > tr > .selected:hover,
+table.dataTable.display tbody > tr.selected:hover,
+table.dataTable.display tbody > tr > .selected:hover {
+  background-color: rgba(255, 75, 43, 0.15) !important;
+}
+
+/* Select Checkbox Styling */
+table.dataTable tbody tr.selected .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: var(--nagori-primary) !important;
+  border-color: var(--nagori-primary) !important;
+}
+
+/* ============================================
+   DATATABLES FIXEDHEADER EXTENSION
+   ============================================ */
+
+/* Fixed Header */
+table.dataTable.fixedHeader-floating {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+.fixedHeader-floating thead th {
+  background: var(--nagori-gradient) !important;
+  color: white !important;
+  border-bottom: none !important;
+}
+
+/* ============================================
    RESPONSIVE ADJUSTMENTS
    ============================================ */
 
@@ -763,6 +1219,46 @@ body {
   .main-header .navbar-nav .nav-link {
     padding: 8px 12px !important;
   }
+  
+  /* DataTables Mobile Adjustments */
+  .dataTables_wrapper .dataTables_length select {
+    min-width: 60px !important;
+  }
+  
+  .dataTables_wrapper .dataTables_filter input {
+    min-width: 150px !important;
+  }
+  
+  .dt-buttons {
+    justify-content: center !important;
+  }
+  
+  .dt-button {
+    font-size: 12px !important;
+    padding: 6px 12px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Extra small devices */
+  .dataTables_wrapper .dataTables_length,
+  .dataTables_wrapper .dataTables_filter,
+  .dataTables_wrapper .dataTables_info,
+  .dataTables_wrapper .dataTables_paginate {
+    text-align: center !important;
+    justify-content: center !important;
+  }
+  
+  .dataTables_wrapper .dataTables_filter input {
+    width: 100% !important;
+    min-width: unset !important;
+  }
+  
+  table.dataTable thead th,
+  table.dataTable tbody td {
+    padding: 8px 6px !important;
+    font-size: 12px !important;
+  }
 }
 
 /* ============================================
@@ -779,13 +1275,80 @@ body {
     color: #ffffff !important;
   }
   
-  .dark-mode .table {
+  .dark-mode table.dataTable {
     background-color: #2d2d2d !important;
     color: #ffffff !important;
   }
   
-  .dark-mode .table thead th {
+  .dark-mode table.dataTable thead th {
+    background: linear-gradient(135deg, #3d3d3d 0%, #4d4d4d 100%) !important;
+    color: #ffffff !important;
+  }
+  
+  .dark-mode table.dataTable tbody tr {
+    background: #2d2d2d !important;
+  }
+  
+  .dark-mode table.dataTable tbody tr:nth-child(even) {
+    background: #353535 !important;
+  }
+  
+  .dark-mode table.dataTable tbody tr:hover {
+    background: linear-gradient(135deg, rgba(255, 75, 43, 0.1) 0%, rgba(255, 65, 108, 0.1) 100%) !important;
+  }
+  
+  .dark-mode table.dataTable tbody td {
+    color: #ffffff !important;
+    border-top-color: #404040 !important;
+  }
+  
+  .dark-mode .dataTables_wrapper .dataTables_length select,
+  .dark-mode .dataTables_wrapper .dataTables_filter input {
     background-color: #3d3d3d !important;
     color: #ffffff !important;
+    border-color: #555555 !important;
+  }
+  
+  .dark-mode .dataTables_wrapper .dataTables_info {
+    color: #cccccc !important;
+  }
+  
+  .dark-mode .dataTables_wrapper .dataTables_paginate .paginate_button {
+    background-color: #3d3d3d !important;
+    color: #ffffff !important;
+    border-color: #555555 !important;
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  .main-sidebar,
+  .main-header,
+  .content-header,
+  .dataTables_wrapper .dataTables_length,
+  .dataTables_wrapper .dataTables_filter,
+  .dataTables_wrapper .dataTables_info,
+  .dataTables_wrapper .dataTables_paginate,
+  .dt-buttons {
+    display: none !important;
+  }
+  
+  .content-wrapper {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  table.dataTable {
+    border: 1px solid #000 !important;
+  }
+  
+  table.dataTable thead th,
+  table.dataTable tbody td {
+    border: 1px solid #000 !important;
+    background: white !important;
+    color: black !important;
   }
 }
